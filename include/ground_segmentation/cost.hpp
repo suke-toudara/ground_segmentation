@@ -156,6 +156,18 @@ private:
     float height_threshold_;
 
     std::vector<CellInfo> original_map;
+    
+    //cell_info
+    delta_z_m_ = 0.0f;
+    occupancy_probability_ = UNKNOWN_PROBABILITY;
+    danger_likelihood_ = 0.0f;
+    safe_likelihood_ = 0.0f;
+    height_threshold_ = 0.0f;
+    std::vector<float> z_vector_;
+    float delta_z_m_;
+    float occupancy_probability_;
+    float danger_likelihood_, safe_likelihood_;
+    float height_threshold_;
 };
 
 #endif // COST_MAP_HPP
