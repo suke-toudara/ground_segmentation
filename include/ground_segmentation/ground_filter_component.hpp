@@ -31,9 +31,20 @@ class PointCloudDustFilter : public rclcpp::Node
 
         CostMap cost_map_;
 
-
         rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr subscription_;
         std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
         tf2_ros::TransformListener tf_listener_;
+
+        //cell_info
+        delta_z_m_ = 0.0f;
+        occupancy_probability_ = UNKNOWN_PROBABILITY;
+        danger_likelihood_ = 0.0f;
+        safe_likelihood_ = 0.0f;
+        height_threshold_ = 0.0f;
+        std::vector<float> z_vector_;
+        float delta_z_m_;
+        float occupancy_probability_;
+        float danger_likelihood_, safe_likelihood_;
+        float height_threshold_;
 }
 }
